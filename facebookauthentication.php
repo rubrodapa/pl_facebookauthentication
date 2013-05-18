@@ -114,9 +114,31 @@ class PlgAuthenticationFacebookauthentication extends JPlugin
 					$response->error_message = '';
 					
 				}else{
-
-					$response->status		= JAuthentication::STATUS_FAILURE;
-					$response->error_message = JText::_('PLG_FACEBOOK_ERROR_NOT_REGISTERED');
+					
+					//If user is not register, load the user options in the Session and redirect to the register page.
+					//TODO: Check if this way to manage the SESSION is well used in Joomla
+					$registry = $_SESSION["__default"]["registry"];
+					$data = $registry->get("com_users");
+						
+					$array = array(
+							"name" => $json->{'name'},
+							"username" => $json->{'username'},
+							"password1" => "",
+							"password2" => "",
+							"email1" => $json->{'email'},
+							"email2" => $json->{'email'}
+					);
+						
+					$data->registration->data = $array;
+					$registry->set("com_users",$data);
+					$_SESSION["__default"]["registry"] = $registry;
+						
+					//TODO: Check if this URL is always working
+					$url = JURI::base(true);
+					$url .= "/index.php/registration-form";
+						
+					//TODO: Check if there is a better way to do the redirection in Joomla
+					header("Location:".$url);
 					
 				}
 				
