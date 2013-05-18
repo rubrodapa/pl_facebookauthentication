@@ -9,7 +9,7 @@ with the OAuth2 system of facebook using the [Facebook libraries](https://github
 The plugin will be triggered at "OnUserAuthenticate" event of Joomla CMS. It will try authenticate the user using facebook
 following the [flow defined by facebook](https://developers.facebook.com/docs/facebook-login/login-flow-for-web-no-jssdk/).
 In order to work, you need a way to handle the redirection of facebook when it comes back to Joomla. For this you can install the
-[OAuth2 Redirection Login Treatment](#).
+[OAuth2 Redirection Login Treatment](https://github.com/rubrodapa/pl_oauth2logintreatment).
 
 After having the correct token from Facebook, the plugin checks if there is a user registered with the same email.
 If so, the plugin logins that user in the site.
