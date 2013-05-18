@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="authentication">
+	<name>plg_authentication_facebookauthentication</name>
+	<author>Ruben Rodriguez</author>
+	<creationDate>Mat 2013</creationDate>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>aparicion.ruben@gmail.com</authorEmail>
+	<authorUrl>http://eng.zvblog.es</authorUrl>
+	<version>0.0.1</version>
+	<description>plg_authentication_facebookauthentication_xml_description</description>
+	<files>
+		<filename plugin="facebookauthentication">facebookauthentication.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="languages">
+		<language tag="en-GB">en-GB.plg_authentication_facebookauthentication.ini</language>
+		<language tag="en-GB">en-GB.plg_authentication_facebookauthentication.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+
+				<field name="client_id" type="text"
+					description="PLG_FACEBOOK_CLIENT_ID_DESC"
+					label="PLG_FACEBOOK_CLIENT_ID_LABEL"
+					size="20"
+				/>
+
+				<field name="client_secret" type="text"
+					description="PLG_FACEBOOK_CLIENT_SECRET_DESC"
+					label="PLG_FACEBOOK_CLIENT_SECRET_LABEL"
+					size="20"
+				/>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
