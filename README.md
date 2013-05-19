@@ -15,6 +15,10 @@ After having the correct token from Facebook, the plugin checks if there is a us
 If so, the plugin logins that user in the site.
 If not, the plugin sends an error saying that the user is not registered yet with that email.
 
+**Changelog 0.0.2**
+
+- If the user is not registered and allow register is enabled, redirect the user to the registration form with the Facebook data as default.
+
 **Joomla Facebook Authentication 0.0.1**
 
 - Try to authenticate a user with the Facebook OAuth2 library.
