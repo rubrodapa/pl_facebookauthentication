@@ -143,8 +143,7 @@ class PlgAuthenticationFacebookauthentication extends JPlugin
 						$url = JRoute::_('index.php?option=com_users&view=registration');
 						
 						//Redirection to register component
-						//TODO: Check if there is a better way to do the redirection in Joomla
-						header("Location:".$url);
+						JFactory::getApplication()->redirect($url,JText::_("PLG_FACEBOOK_REDIRECT_REGISTER_MSG"));
 						
 					}else{
 						
